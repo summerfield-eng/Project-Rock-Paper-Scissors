@@ -81,16 +81,18 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-console.group;
+function playGame() {
+  console.log(playRound(getHumanChoice(), getComputerChoice()));
+  console.log(playRound(getHumanChoice(), getComputerChoice()));
+  console.log(playRound(getHumanChoice(), getComputerChoice()));
+  console.log(playRound(getHumanChoice(), getComputerChoice()));
+  console.log(playRound(getHumanChoice(), getComputerChoice()));
+}
 
-console.log(playRound(getHumanChoice(), getComputerChoice()));
-console.log(playRound(getHumanChoice(), getComputerChoice()));
-console.log(playRound(getHumanChoice(), getComputerChoice()));
-console.log(playRound(getHumanChoice(), getComputerChoice()));
-console.log(playRound(getHumanChoice(), getComputerChoice()));
+playGame();
+
 console.table({
   Human: humanScore,
   Computer: computerSCore,
   "Times played": numberOfRounds,
 });
-console.groupEnd;
