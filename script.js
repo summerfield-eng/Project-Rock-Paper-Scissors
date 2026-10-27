@@ -37,58 +37,58 @@ function getHumanChoice() {
   return humanChoice;
 }
 
-function playRound(humanChoice, computerChoice) {
-  numberOfRounds++;
-  if (humanChoice === "rock") {
-    switch (computerChoice) {
-      case "rock":
-        return "It's a tie!";
+function playGame() {
+  function playRound(humanChoice, computerChoice) {
+    numberOfRounds++;
+    if (humanChoice === "rock") {
+      switch (computerChoice) {
+        case "rock":
+          return "It's a tie!";
 
-      case "paper":
-        computerSCore++;
-        return "You lost, Paper beats Rock";
+        case "paper":
+          computerSCore++;
+          return "You lost, Paper beats Rock";
 
-      case "scissors":
-        humanScore++;
-        return "You won! Rock beats Scissors";
-    }
-  } else if (humanChoice === "paper") {
-    switch (computerChoice) {
-      case "rock":
-        humanScore++;
-        return "You won! Paper beats Rock";
+        case "scissors":
+          humanScore++;
+          return "You won! Rock beats Scissors";
+      }
+    } else if (humanChoice === "paper") {
+      switch (computerChoice) {
+        case "rock":
+          humanScore++;
+          return "You won! Paper beats Rock";
 
-      case "paper":
-        return "It's a tie!";
+        case "paper":
+          return "It's a tie!";
 
-      case "scissors":
-        computerSCore++;
-        return "You lost, Scissors beats Paper";
-    }
-  } else if (humanChoice === "scissors") {
-    switch (computerChoice) {
-      case "rock":
-        computerSCore++;
-        return "You lost, Rock beats Scissors";
+        case "scissors":
+          computerSCore++;
+          return "You lost, Scissors beats Paper";
+      }
+    } else if (humanChoice === "scissors") {
+      switch (computerChoice) {
+        case "rock":
+          computerSCore++;
+          return "You lost, Rock beats Scissors";
 
-      case "paper":
-        humanScore++;
-        return "You won! Rock beats Scissors";
+        case "paper":
+          humanScore++;
+          return "You won! Rock beats Scissors";
 
-      case "scissors":
-        return "It's a tie!";
+        case "scissors":
+          return "It's a tie!";
+      }
     }
   }
-}
 
-function playGame() {
-  console.log(playRound(getHumanChoice(), getComputerChoice()));
-  console.log(playRound(getHumanChoice(), getComputerChoice()));
-  console.log(playRound(getHumanChoice(), getComputerChoice()));
-  console.log(playRound(getHumanChoice(), getComputerChoice()));
   console.log(playRound(getHumanChoice(), getComputerChoice()));
 }
 
+playGame();
+playGame();
+playGame();
+playGame();
 playGame();
 
 console.table({
